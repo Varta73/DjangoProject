@@ -8,7 +8,7 @@
 
 1. Клонируйте репозиторий:
 ```
-git clone https://github.com/Varta73/Project3.git
+https://github.com/Varta73/DjangoProject/tree/feature/homework_22
 ```
 
 2. Установите зависимости:
