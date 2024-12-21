@@ -4,7 +4,7 @@ from django.db import models
 class Category(models.Model):
     name = models.CharField(
         max_length=100,
-        verbose_name="Наименование",
+        verbose_name="Наименование категории",
         help_text="Введите наименование категории",
     )
     description = models.TextField(
