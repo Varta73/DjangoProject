@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.utils import timezone
+
 
 class Category(models.Model):
     name = models.CharField(
@@ -43,8 +45,8 @@ class Product(models.Model):
         null=True,
     )
     price = models.IntegerField(verbose_name="Цена за покупку")
-    created_at = models.DateTimeField(verbose_name="Дата создания")
-    updated_at = models.DateTimeField(verbose_name="Дата последнего изменения")
+    created_at = models.DateField(blank=True, null=True, verbose_name="Дата создания", default=timezone.now)
+    updated_at = models.DateField(blank=True, null=True, verbose_name="Дата последнего изменения", default=timezone.now)
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name="products"
     )
