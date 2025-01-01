@@ -1,0 +1,106 @@
+[
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "name": "Авокадо Хасс",
+        "description": "Свежее авокадо",
+        "image": "static/images/avocado.jpg",
+        "price": 239,
+        "created_at": "2024-12-20",
+        "updated_at": "2024-12-20",
+        "category": 4
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 20,
+    "fields": {
+        "name": "Клубника",
+        "description": "Спелые ягоды",
+        "image": "static/images/Strawberry.jpg",
+        "price": 400,
+        "created_at": "2024-12-20",
+        "updated_at": "2024-12-20",
+        "category": 4
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 21,
+    "fields": {
+        "name": "Картофель",
+        "description": "Хорошо разваривается",
+        "image": "static/images/картофель.jpg",
+        "price": 239,
+        "created_at": "2024-12-20",
+        "updated_at": "2024-12-20",
+        "category": 2
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 22,
+    "fields": {
+        "name": "Креветки Королевские",
+        "description": "Королевские креветки отличаются размером: они больше обычных",
+        "image": "static/images/креветки.jpg",
+        "price": 274,
+        "created_at": "2024-12-20",
+        "updated_at": "2024-12-20",
+        "category": 3
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 23,
+    "fields": {
+        "name": "Морковь",
+        "description": "Крупная, сладкая",
+        "image": "static/images/морковь.jpg",
+        "price": 29,
+        "created_at": "2024-12-20",
+        "updated_at": "2024-12-20",
+        "category": 2
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 24,
+    "fields": {
+        "name": "Томаты",
+        "description": "Свежие, сочные томаты",
+        "image": "static/images/tomato.jpg",
+        "price": 209,
+        "created_at": "2024-12-20",
+        "updated_at": "2024-12-20",
+        "category": 2
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 25,
+    "fields": {
+        "name": "Окунь морской",
+        "description": "Отличается выразительным вкусом, нежной сочной текстурой и небольшим содержанием калорий",
+        "image": "static/images/окунь.jpg",
+        "price": 164,
+        "created_at": "2024-12-20",
+        "updated_at": "2024-12-20",
+        "category": 3
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 26,
+    "fields": {
+        "name": "Дорадо",
+        "description": "Отличается нежной мягкой текстурой и насыщенным вкусом",
+        "image": "static/images/dorado.jpg",
+        "price": 315,
+        "created_at": "2024-12-20",
+        "updated_at": "2024-12-20",
+        "category": 3
+    }
+}
+]

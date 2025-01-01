@@ -1,0 +1,26 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Овощи",
+        "description": "Овощи, грибы, зелень"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+        "name": "Рыба",
+        "description": "Рыба, морепродукты"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+        "name": "Фрукты",
+        "description": "Фрукты, ягоды"
+    }
+}
+]
