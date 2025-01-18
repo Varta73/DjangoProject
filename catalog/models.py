@@ -46,11 +46,11 @@ class Product(models.Model):
         blank=True,
         null=True,
     )
-    price = models.IntegerField(verbose_name="Цена за покупку")
+    price = models.IntegerField(verbose_name="Цена")
     created_at = models.DateField(blank=True, null=True, verbose_name="Дата создания", default=timezone.now)
     updated_at = models.DateField(blank=True, null=True, verbose_name="Дата последнего изменения", default=timezone.now)
     category = models.ForeignKey(
-        Category, on_delete=models.CASCADE, related_name="products"
+        Category, verbose_name="Категория", on_delete=models.CASCADE, related_name="products"
     )
 
     def __str__(self):

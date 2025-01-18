@@ -1,0 +1,22 @@
+{% extends 'catalog/home.html' %}
+{% block content %}
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+            <form method="post">
+                <p class="card-text"> Вы действительно хотите удалить {{object.name}} ?</p>
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <button type="submit" class="btn btn-primary">
+                Удалить
+                </button>
+
+                <a href="{% url 'catalog:product_list' %}" class="btn btn-secondary">Отмена</a>
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
