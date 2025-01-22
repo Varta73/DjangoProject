@@ -31,11 +31,9 @@ class Product(models.Model):
     name = models.CharField(
         max_length=150,
         verbose_name="Наименование",
-        help_text="Введите наименование продукта",
     )
     description = models.TextField(
         verbose_name="Описание",
-        help_text="Введите описание продукта",
         blank=True,
         null=True,
     )
@@ -49,6 +47,7 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name="Цена")
     created_at = models.DateField(blank=True, null=True, verbose_name="Дата создания", default=timezone.now)
     updated_at = models.DateField(blank=True, null=True, verbose_name="Дата последнего изменения", default=timezone.now)
+    status_publication = models.BooleanField(verbose_name="Статус публикации", default=False)
     category = models.ForeignKey(
         Category, verbose_name="Категория", on_delete=models.CASCADE, related_name="products"
     )
