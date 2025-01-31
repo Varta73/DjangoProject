@@ -5,18 +5,14 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
-            <h2>Добавить новый продукт</h2>
+
             <form method="post"
             enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.non_field_errors }}
                 {{ form.as_p }}
                 <button type="submit" class="btn btn-primary">
-                {% if object %}
-                Сохранить
-                {% else %}
-                Создать
-                {% endif %}
+                Войти
                 </button>
 
                 <a href="{% url 'catalog:product_list' %}" class="btn btn-secondary">Отмена</a>
