@@ -2,6 +2,8 @@ from django.db import models
 
 from django.utils import timezone
 
+from users.models import User
+
 
 class Category(models.Model):
     objects = None
@@ -51,6 +53,7 @@ class Product(models.Model):
     category = models.ForeignKey(
         Category, verbose_name="Категория", on_delete=models.CASCADE, related_name="products"
     )
+    owner = models.ForeignKey(User, verbose_name="Владелец", blank=True, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name
@@ -59,3 +62,7 @@ class Product(models.Model):
         verbose_name = "Продукт"
         verbose_name_plural = "Продукты"
         ordering = ["name", "price", "created_at", "category"]
+        permissions = [
+            ('can_unpublish_product', 'Can unpublish product'),
+
+        ]
