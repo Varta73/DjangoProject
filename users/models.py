@@ -4,7 +4,7 @@ from django_countries.fields import CountryField
 
 
 class User(AbstractUser):
-    username = None
+    username = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(unique=True, verbose_name='Email')
     avatar = models.ImageField(upload_to='users/avatar/', verbose_name='Аватар', blank=True, null=True, help_text='Загрузите свой аватар')
     phone = models.CharField(max_length=12, verbose_name='Телефон', blank=True, null=True, help_text='Введите номер телефона')

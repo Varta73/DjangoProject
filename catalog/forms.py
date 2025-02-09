@@ -74,3 +74,9 @@ class ProductForm(StyleFormMixin, ModelForm):
                 raise ValidationError('Размер файла превышает допустимый размер 5 MB')
         return image
 
+
+class ProductModeratorForm(StyleFormMixin, ModelForm):
+    class Meta:
+        model = Product
+        fields = ("status_publication", )
+
