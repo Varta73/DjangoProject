@@ -1,0 +1,26 @@
+{% extends 'catalog/home.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="d-grid gap-2 col-6 mx-auto" style="text-align:center">
+        <p align="center"><h1>Категория:{{Category.name}}</h1></p>
+     </div>
+    {% if products %}
+<div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for product in products %}
+        <div class="col" >
+          <div class="card shadow-sm text-center">
+              <img src="{{ product.image | media_filter }}" width=" 350" height=" 270">
+              <div class="card-body">
+                  <p class="card-text">{{ product.name }}</p>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <div class="btn">
+                   <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}" role="button">Подробнее о продукте</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

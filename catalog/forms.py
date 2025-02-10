@@ -1,8 +1,7 @@
 from django.forms import BooleanField, ModelForm
 from django.core.exceptions import ValidationError
 
-from catalog.models import Product
-
+from catalog.models import Product, Category
 
 forbidden_words = [
     'казино',
@@ -80,3 +79,9 @@ class ProductModeratorForm(StyleFormMixin, ModelForm):
         model = Product
         fields = ("status_publication", )
 
+
+class CategoryForm(StyleFormMixin, ModelForm):
+
+    class Meta:
+        model = Category
+        fields = ('name', 'description')
