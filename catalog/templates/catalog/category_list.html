@@ -1,0 +1,14 @@
+{% extends 'catalog/home.html' %}
+{% load my_tags %}
+{% block content %}
+
+    <div class="d-grid gap-2 col-6 mx-auto" style="text-align:center">
+        <p align="center"><h1>Выберите категорию</h1></p>
+                <div class="btn">
+                   <a class="btn btn-primary" href="/category/2/product" role="button">Овощи</a>
+                    <a class="btn btn-primary" href="/category/3/product" role="button">Рыба</a>
+                    <a class="btn btn-primary" href="/category/4/product" role="button">Фрукты</a>
+                </div>
+              </div>
+        </div>
+{% endblock %}

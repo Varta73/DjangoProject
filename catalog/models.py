@@ -51,7 +51,7 @@ class Product(models.Model):
     updated_at = models.DateField(blank=True, null=True, verbose_name="Дата последнего изменения", default=timezone.now)
     status_publication = models.BooleanField(verbose_name="Статус публикации", default=False)
     category = models.ForeignKey(
-        Category, verbose_name="Категория", on_delete=models.CASCADE, related_name="products"
+        Category, verbose_name="Категория", on_delete=models.CASCADE, related_name="category"
     )
     owner = models.ForeignKey(User, verbose_name="Владелец", blank=True, null=True, on_delete=models.SET_NULL)
 

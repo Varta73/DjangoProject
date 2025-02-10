@@ -4,8 +4,9 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, TemplateView, CreateView, UpdateView, DeleteView
 
-from catalog.forms import ProductForm, ProductModeratorForm
-from catalog.models import Product
+from catalog.forms import ProductForm, ProductModeratorForm, CategoryForm
+from catalog.models import Product, Category
+from catalog.services import get_products_from_cache, get_products_by_category
 
 
 # def home(request):
@@ -15,12 +16,20 @@ from catalog.models import Product
 class ProductListView(ListView):
     model = Product
 
+    def get_queryset(self):
+        return get_products_from_cache()
+
 # def contacts(request):
 #     return render(request, 'contacts.html')
 
 
 class CatalogListView(ListView):
     model = Product
+
+
+class CategoryListView(ListView):
+    model = Category
+    form_class = CategoryForm
 
 
 # def product_list(request):
@@ -76,3 +85,13 @@ class ProductUpdateView(UpdateView, LoginRequiredMixin):
 class ProductDeleteView(DeleteView, LoginRequiredMixin):
     model = Product
     success_url = reverse_lazy('catalog:product_list')
+
+
+class ProductsByCategoryView(ListView):
+    model = Product
+    template_name = 'catalog/products_by_category.html'
+    context_object_name = 'products'
+
+    def get_queryset(self):
+        category_id = self.kwargs.get('pk')
+        return get_products_by_category(category_id=category_id)
